@@ -4,7 +4,6 @@ web/app/plugins/*
 web/app/mu-plugins/*/
 web/app/upgrade
 web/app/uploads/*
-!web/app/uploads/[0-9]*
 !web/app/uploads/.gitkeep
 
 # WordPress
@@ -23,9 +22,6 @@ sql-dump-*.sql
 # Vendor (e.g. Composer)
 vendor/*
 !vendor/.gitkeep
-
-# Node Package Manager
-node_modules
 
 # Vagrant
 bin

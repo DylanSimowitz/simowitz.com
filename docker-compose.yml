@@ -1,0 +1,23 @@
+version: '2'
+services:
+  fpm:
+    image: php:fpm
+    volumes:
+      - ./web:/var/www/html/
+    ports:
+      - 9000:9000
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./web:/var/www/html/
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    ports:
+      - 8000:80
+    environment:
+      VIRTUAL_HOST: simowitz.localhost.test
+
+  mysql:
+    image: mariadb
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
