@@ -66,8 +66,7 @@
     "wpackagist-plugin/schema": "^1.6"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^2.5.1",
-    "heroku/heroku-buildpack-php": "*"
+    "squizlabs/php_codesniffer": "^2.5.1"
   },
   "extra": {
     "installer-paths": {

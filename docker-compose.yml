@@ -1,23 +1,37 @@
 version: '2'
 services:
   fpm:
-    image: php:fpm
+    build:
+      context: ./docker/php
     volumes:
-      - ./web:/var/www/html/
-    ports:
-      - 9000:9000
+      - ./:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=mysql://root:password@db:3306/wordpress
 
   nginx:
     image: nginx
     volumes:
-      - ./web:/var/www/html/
+      - ./:/var/www/html
       - ./site.conf:/etc/nginx/conf.d/site.conf
-    ports:
-      - 8000:80
+    depends_on:
+      - fpm
     environment:
-      VIRTUAL_HOST: simowitz.localhost.test
+      - VIRTUAL_HOST=simowitz.test
 
-  mysql:
+  db:
     image: mariadb
+    ports:
+      - 3306:3306
     environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=wordpress
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
