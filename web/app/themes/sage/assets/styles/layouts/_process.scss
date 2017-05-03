@@ -1,5 +1,5 @@
 .process-container {
-  // background-color: #999;
+  // background-color: $purple;
   width: 100%;
   max-width: map-get($grid-breakpoints, xl);
   margin: 0 auto;
@@ -11,9 +11,9 @@
   align-items: flex-start;
   // border-left: 2px solid $gold;
   // border-right: 2px solid $gold;
-  background-color: white;
+  padding: 12px 6px;
   overflow: hidden;
-  padding: 4px;
+  // padding: 4px;
   background-size: cover;
   @media (max-width: map-get($grid-breakpoints, md)) {
     background-image: none !important;

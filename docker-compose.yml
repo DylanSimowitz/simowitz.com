@@ -35,3 +35,4 @@ services:
       - "80:80"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./docker/nginx-proxy/nginx.conf:/etc/nginx/conf.d/nginx.conf

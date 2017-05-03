@@ -1,15 +1,64 @@
 footer {
-  display: flex;
-  padding: 4px;
-  background-color: $purple;
-  .widget_pages {
+  background: linear-gradient(-45deg, lighten($purple, 10%), lighten($purple, 20%), lighten($purple, 5%));
+}
+.footer__container {
+  @extend %row;
+  max-width: map-get($grid-breakpoints, xxl);
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 8px;
+  // background-color: $purple;
+  border-bottom: 2px solid $gold;
+  .contact-widget {
+    > div {
+      @extend %row;
+    }
+    address {
+      @extend %row;
+    }
+    i {
+      color: lighten($purple, 35%);
+      margin-right: 5px;
+    }
+  }
+  h3 {
+    color: white;
+    margin-top: 20px;
+    border-bottom: 4px solid $gold;
+  }
+  .widgets {
+    @extend %row;
+    @extend %col-xs-12;
+    // @extend %col-sm-6;
+    flex-wrap: wrap;
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      order: 0;
+    }
+  }
+  .widget {
+    @extend %col-xs-12;
+    @extend %col-md-4;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    line-height: 1.45;
+    :not(h3) {
+      font-size: 0.8rem;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      &:visited {
+        color: white;
+      }
+    }
     ul {
       margin-bottom: 0;
       list-style: none;
-      padding-left: 16px;
+      padding-left: 0px;
       a {
-        text-decoration: none;
         padding: 4px;
+        &:hover {
+        }
       }
       li {
         margin-bottom: 4px;

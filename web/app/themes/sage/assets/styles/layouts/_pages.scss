@@ -13,8 +13,15 @@
   margin: 0;
   margin-bottom: 24px;
   font-size: 8vw;
+
   color: white;
   padding-left: 40px;
+  @media (min-width: map-get($grid-breakpoints, xl)) {
+    font-size: 6vw;
+  }
+  @media (min-width: map-get($grid-breakpoints, xxl)) {
+    font-size: 5vw;
+  }
 }
 
 .practice__title {

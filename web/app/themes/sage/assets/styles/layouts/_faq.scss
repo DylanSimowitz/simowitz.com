@@ -8,9 +8,12 @@
 .faq-container {
   @extend %col-xs-12;
   @extend %col-lg-8;
-  min-height: 100vh;
+  // min-height: 100vh;
   margin: 0 auto;
   margin-top: 20px;
+  // @media (min-width: map-get($grid-breakpoints, sm)) {
+    // min-height: 0;
+  // }
   .accordion__fold {
     margin-bottom: 20px;
   }
@@ -31,7 +34,7 @@
     // opacity: 1;
   }
   .accordion__header {
-    background-color: $purple;
+    background-color: lighten($purple, 0%);
     padding: 8px 0px;
     transition: position 0.4s;
     &:before {
@@ -45,7 +48,6 @@
     }
     h4 {
       // pointer-events: none;
-      font-size: 1.85em;
       margin: 0;
       color: #ddd;
     }

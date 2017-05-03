@@ -12,9 +12,9 @@
 @import "~animate.css";
 
 @import "mixins/typography";
+@import "components/grid";
 @import "common/global";
 @import "common/wordpress";
-@import "components/grid";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
@@ -31,4 +31,5 @@
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
+@import "layouts/testimonials";
 @import "layouts/tinymce";

@@ -12,7 +12,9 @@ $grid-breakpoints: (
   // Large screen / desktop
   lg: 992px,
   // Extra large screen / wide desktop
-  xl: 1200px
+  xl: 1200px,
+  // Huge desktop
+  xxl: 1600px,
 );
 
 @mixin grid($columns) {
@@ -23,10 +25,12 @@ $grid-breakpoints: (
     @if $length >= $index + 1 {
       $next-breakpoint: nth(nth($grid-breakpoints, ($index + 1)), 2);
     }
-    %col-#{$size} {
-      flex-basis: 0;
-      flex-grow: 1;
-      max-width: 100%;
+    @media (min-width: $breakpoint) {
+      %col-#{$size} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
     }
     %col-#{$size}-hidden-down {
       @media (max-width: $next-breakpoint) {

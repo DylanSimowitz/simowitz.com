@@ -1,6 +1,13 @@
+.slider__container {
+  background-color: lighten(black, 15%);
+}
 .slider {
+  // height: 90vw;
+  // max-height: 90vh;
+  max-width: map-get($grid-breakpoints, xxl);
+  margin: 0 auto;
   .flickity-page-dots {
-    bottom: 0px;
+    bottom: 10px;
     .dot {
       border: 2px solid white;
       &.is-selected {
@@ -18,14 +25,17 @@
   }
 }
 .flickity-viewport {
-  transition: height 0.2s;
+  // transition: height 0.2s;
 }
 .slider__slide {
   @extend %row;
   flex-direction: row-reverse;
-  height: auto;
+  height: auto; 
   width: 100%;
   background-size: cover;
+  &.resizing {
+    height: 100%;
+  }
 }
 .slider__info-text {
   @extend %col-xs;
@@ -39,23 +49,23 @@
     @extend .fadeIn;
     @extend .animated;
     margin: 0;
-    border-bottom: 5px solid $gold;
+    border-bottom: 3px solid $gold;
     padding-bottom: 5px;
-    font-size: 10vw;
+    font-size: 8vw;
     @media(min-width: map-get($grid-breakpoints, md)) { 
-      font-size: 6vw;
+      font-size: 4vw;
       letter-spacing: 3px;
     }
   }
   p {
     @extend .animated;
     @extend .fadeInUp;
-    font-family: 'Cabin', sans-serif;
-    font-size: 1.35em;
+    // font-family: 'Cabin', sans-serif;
+    font-size: 1.15em;
     line-height: 1.75em;
     max-width: 750px;
     @media(min-width: map-get($grid-breakpoints, lg)) { 
-      font-size: 1.45em;
+      font-size: 1.25em;
       line-height: 2.25em;
     }
   }
@@ -70,7 +80,8 @@
   @extend %row;
   flex-direction: column;
   justify-content: flex-end;
-  max-width: 570px;
+  // max-width: 570px;
+  max-width: 370px;
   background-color: rgba($gold, 0.25);
   // border-right: 2px solid $gold;
   position: relative;

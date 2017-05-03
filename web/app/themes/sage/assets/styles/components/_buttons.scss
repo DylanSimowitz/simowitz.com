@@ -5,13 +5,14 @@
   color: white;
   background-color: rgba(0,0,0,0.10);
   text-decoration: none;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 1.75em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25em;
   position: relative;
+  transistion: all 1.25s;
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: rgba(255,255,255,0.25);
+    // background-color: rgba(255,255,255,0.15);
     transition: background-color 1.25s;
   }
   &:hover:before {

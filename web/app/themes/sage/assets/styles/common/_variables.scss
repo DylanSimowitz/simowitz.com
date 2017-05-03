@@ -33,17 +33,18 @@ $fa-font-path:          '~font-awesome/fonts';
 
 // Hamburger variables
 $hamburger-layer-width: 24px;
-$hamburger-layer-height: 3px;
-$hamburger-layer-spacing: 5px;
-$hamburger-layer-color: $gold;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 4px;
+$hamburger-layer-color: white;
 
 // Menu
 // $mm_backgroundColor: url('../images/dark-leather.png'), $color2; 
-$mm_backgroundColor: black; 
+// $mm_backgroundColor: lighten($purple, 15%); 
+$mm_backgroundColor: $purple;
 // $mm_backgroundColor: url('../images/dark-leather.png'); 
-$mm_borderColor: $gold;
-$mm_emphasizedBackgroundColor: $color3;
-$mm_textColor: $gold;
+$mm_borderColor: white;
+$mm_emphasizedBackgroundColor: $gold;
+$mm_textColor: white;
 $mm_btnSize: 50px;
 $mm_dimmedTextColor: white;
 $mm_navbarColor: white;
