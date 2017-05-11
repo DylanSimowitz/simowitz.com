@@ -11,11 +11,13 @@
             setup_postdata($post)
           ?>
         <div class="testimonial__card card">
-          @if(get_field('image'))
           <div class="testimonial__image">
+          @if(get_field('image'))
             <img src="{{get_field('image')['url']}}" alt="">
-          </div>
+          @else 
+            <img src="@asset('images/default_avatar.png')">
           @endif
+          </div>
           <div class="testimonial__content">
             <h4>{{$post -> post_title}}</h4>
             <p>{{$post -> post_content}}</p>

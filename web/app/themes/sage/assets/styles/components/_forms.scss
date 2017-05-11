@@ -33,7 +33,7 @@ textarea {
 }
 .consultation {
   @extend %row;
-  @extend %col-xs-12;
+  @extend %col-xs-12-wrap;
   justify-content: center;
   // max-width: map-get($grid-breakpoints, sm);
   flex-wrap: wrap;
@@ -53,7 +53,7 @@ textarea {
   // background-size: cover;
 }
 .consultation__text {
-  @extend %col-xs-12;
+  @extend %col-xs-12-wrap;
   @extend %col-md-6;
   padding: 0 8px;
   p {
@@ -69,7 +69,7 @@ textarea {
   // padding-bottom: 4px; 
 }
 .consultation__form {
-  @extend %col-xs-12;
+  @extend %col-xs-12-wrap;
   @extend %col-md-6;
   // @extend %col-xl-6;
   @media (min-width: map-get($grid-breakpoints, lg)) {
@@ -87,16 +87,15 @@ textarea {
   nf-fields-wrap {
     @extend %row;
     flex-wrap: wrap;
-    margin: 0 -8px;
     nf-field {
-      @extend %col-xs-12;
-      @extend %col-sm-6;
+      @extend %col-xs-12-wrap;
+      @extend %col-sm-6-wrap;
       padding: 0 4px;
       @media (min-width: map-get($grid-breakpoints, lg)) {
         // max-width: 250px;
       }
       &:nth-child(5) {
-        @extend %col-sm-12;
+        @extend %col-sm-12-wrap;
       }
       .nf-fail{
         input {
@@ -156,16 +155,18 @@ textarea {
     input[type='button'] {
       border: none;
       font-size: 1.2em;
-      background: $purple;
+      background: transparent;
       color: white;
+      border: 1px solid white;
       padding: 8px;
       width: 100%;
       max-width: 160px;
       height: 100%;
-      margin-top: 12px;
       &:hover {
         transition: all 0.3s;
         background: $gold;
+        color: white;
+        border: 1px solid $gold;
         // color: $purple;
         cursor: pointer;
       }

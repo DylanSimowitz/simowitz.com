@@ -1,5 +1,6 @@
 .slider__container {
   background-color: lighten(black, 15%);
+  background: linear-gradient(to right, lighten(black, 15%) 0%, $gold 25%, $gold 75%, lighten(black, 15%) 100%);
 }
 .slider {
   // height: 90vw;

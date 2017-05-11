@@ -1,5 +1,5 @@
 import Flickity from 'flickity';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 let heroSlider;
 // let awardSlider;
@@ -38,7 +38,7 @@ export default {
       jQuery('.slider__slide').removeClass('resizing');
       heroSlider.resize();
       // awardSlider.resize();
-      _.debounce(jQuery('.slider__slide').addClass('resizing'), 250);
+      jQuery('.slider__slide').addClass('resizing');
     });
   },
 };
