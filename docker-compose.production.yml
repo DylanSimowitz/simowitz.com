@@ -19,7 +19,7 @@ services:
     depends_on:
       - fpm
     environment:
-      - VIRTUAL_HOST=simowitz.test
+      - VIRTUAL_HOST=simowitz.com
 
   db:
     image: mariadb
