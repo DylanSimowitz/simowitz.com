@@ -2,7 +2,8 @@ version: '2'
 services:
   fpm:
     build:
-      context: ./docker/php/Dockerfile.production
+      context: ./
+      dockerfile: docker/php/Dockerfile.production
     volumes:
       - ./:/var/www/html
     depends_on:
@@ -18,7 +19,7 @@ services:
     depends_on:
       - fpm
     environment:
-      - VIRTUAL_HOST=simowitz.com
+      - VIRTUAL_HOST=simowitz.test
 
   db:
     image: mariadb
