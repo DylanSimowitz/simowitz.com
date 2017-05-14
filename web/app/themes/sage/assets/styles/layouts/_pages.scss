@@ -1,26 +1,34 @@
 .featured-image {
   @extend %row;
   flex-direction: column;
+  min-height: 300px;
   height: 50vw;
   max-height: 70vh;
   width: 100%;
-  background-size: cover;
   justify-content: center;
-}
-.page-title {
-  background: linear-gradient(to right, rgba(#000,0.85), rgba(#000,0.85));
-  padding: 24px 0;
-  margin: 0;
-  margin-bottom: 24px;
-  font-size: 8vw;
-
-  color: white;
-  padding-left: 40px;
-  @media (min-width: map-get($grid-breakpoints, xl)) {
-    font-size: 6vw;
+  overflow: hidden;
+  position: relative;
+  #featured-image {
+    width: 100%;
+    min-height: 300px;
+    position: absolute;
   }
-  @media (min-width: map-get($grid-breakpoints, xxl)) {
-    font-size: 5vw;
+  &__meta {
+    background: linear-gradient(to right, rgba(#000,0.85), rgba(#000,0.85));
+    padding: 24px 30px;
+    color: white;
+    z-index: 1;
+  }
+  &__page-title {
+    margin: 0;
+    font-size: 8vw;
+    text-align: center;
+    @media (min-width: map-get($grid-breakpoints, xl)) {
+      font-size: 6vw;
+    }
+    @media (min-width: map-get($grid-breakpoints, xxl)) {
+      font-size: 5vw;
+    }
   }
 }
 

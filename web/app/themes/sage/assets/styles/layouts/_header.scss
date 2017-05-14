@@ -43,7 +43,7 @@ nav.header {
   align-items: center;
   // align-self: center;
   // transform: skew(-20deg);
-  padding: 10px 8px;
+  padding: 10px 12px;
   height: 100%;
   color: white;
   margin-left: auto;
@@ -81,6 +81,11 @@ nav.header {
   font-size: 1.40em;
   margin: 4px 0;
   border-bottom: 2px solid $gold;
+  color: white;
+  text-decoration: none;
+  &:visited {
+    color: white;
+  }
   @media (min-width: map-get($grid-breakpoints, lg)) {
     font-size: 1.80em;
   }

@@ -13,14 +13,14 @@ use Roots\Sage\Template\BladeProvider;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:300|Basic|Rufina|Montserrat|Andada', false, null);
+    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:300|Basic|Rufina|Montserrat|Andada|Maven+Pro', false, null);
 }, 100);
 
 /**
  * Load non-critical CSS in footer
  */
 add_action('get_footer', function () {
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_style('font-awesome', 'https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css', false, null);
 }, 100);
 

@@ -1,6 +1,6 @@
 footer {
   background: linear-gradient(-45deg, darken($purple, 5%), darken($purple, 10%), lighten($purple, 5%));
-  border-bottom: 2px solid $gold;
+  // border-bottom: 2px solid $gold;
 }
 .footer__container {
   @extend %row;
@@ -29,7 +29,7 @@ footer {
   .widgets {
     @extend %row;
     @extend %col-xs-12-wrap;
-    @include gutter(25px);
+    @include gutter(25px, xs, sm);
     // @extend %col-sm-6;
     flex-wrap: wrap;
     @media (min-width: map-get($grid-breakpoints, md)) {

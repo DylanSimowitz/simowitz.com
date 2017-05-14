@@ -18,13 +18,13 @@
             {{-- alt="logo"> --}}
           {{-- @endif --}}
           <div class="brand__text">
-            <span class="brand__name">
+            <a href="{{home_url()}}" class="brand__name">
             @if (get_field('company_name', 'options'))
               {{ the_field('company_name', 'options') }}
             @else
               {{ get_bloginfo('name', 'display') }}
             @endif
-            </span>
+            </a>
             {{-- <p class="brand__slogan">{{the_field('company_slogan', 'options')}}</p> --}}
           </div>
         {{-- </a> --}}

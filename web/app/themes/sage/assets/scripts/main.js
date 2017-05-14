@@ -8,6 +8,10 @@ import home from './routes/home';
 import aboutUs from './routes/about';
 import faq from './routes/faq';
 import pageTemplatePracticeareaBlade from './routes/practicearea';
+import blog from './routes/news';
+import singlePost from './routes/single-post';
+import archive from './routes/archive';
+import contact from './routes/contact';
 
 // Use this variable to set up the common and page specific functions. If you
 // rename this variable, you will also need to rename the namespace below.
@@ -20,8 +24,16 @@ const routes = {
   aboutUs,
   // FAQ page
   faq,
+  // News page
+  blog,
   // Practice pages
   pageTemplatePracticeareaBlade,
+  // Single post page
+  singlePost,
+  // Archive page
+  archive,
+  // Contact page
+  contact,
 };
 
 // Load Events
