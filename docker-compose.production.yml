@@ -15,7 +15,7 @@ services:
     image: nginx
     volumes:
       - ./:/var/www/html
-      - ./site.conf:/etc/nginx/conf.d/site.conf
+      - ./site.production.conf:/etc/nginx/conf.d/site.conf
     depends_on:
       - fpm
     environment:
