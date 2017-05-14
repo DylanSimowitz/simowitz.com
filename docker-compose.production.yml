@@ -2,7 +2,7 @@ version: '2'
 services:
   fpm:
     build:
-      context: ./docker/php
+      context: ./docker/php/Dockerfile.production
     volumes:
       - ./:/var/www/html
     depends_on:
