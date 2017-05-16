@@ -164,6 +164,37 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('asset', function ($asset) {
         return '<?= App\\asset_path(\''.trim($asset, '\'"').'\'); ?>';
     });
+    /**
+     * Create @posts Blade directive
+     */
+    sage('blade')->compiler()->directive('posts', function () {
+        return '<?php while(have_posts()) : the_post(); ?>';
+    });
+
+    /**
+     * Create @endposts Blade directive
+     */
+    sage('blade')->compiler()->directive('endposts', function () {
+        return '<?php endwhile; ?>';
+    });
+
+    /**
+     * Create @query() Blade directive
+     */
+    sage('blade')->compiler()->directive('query', function ($args) {
+        $output = '<?php $bladeQuery = new WP_Query($args); ?>';
+        $output .= '<?php while ($bladeQuery->have_posts()) : ?>';
+        $output .= '<?php $bladeQuery->the_post(); ?>';
+
+        return $output;
+    });
+
+    /**
+     * Create @endquery Blade directive
+     */
+    sage('blade')->compiler()->directive('endquery', function () {
+        return '<?php endwhile; ?>';
+    });
 });
 
 /**

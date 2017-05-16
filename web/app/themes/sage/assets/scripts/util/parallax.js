@@ -1,6 +1,10 @@
 class Parallax {
   constructor(element) {
-    this.element = document.querySelector(element);
+    if (element.nodeType) {
+      this.element = element;
+    } else {
+      this.element = document.querySelector(element);
+    }
   }
   init() {
     this.scrollTop = 0;

@@ -46,3 +46,35 @@
 }
 .btn--menu {
 }
+.btn--social {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: white;
+  text-decoration: none;
+  i {
+    font-size: 1.65em;
+  }
+}
+.social-buttons {
+  position: absolute; 
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  &__facebook {
+    background-color: $facebook;
+  }
+  &__twitter {
+    background-color: $twitter;
+  }
+  &__google-plus {
+    background-color: $google;
+  }
+  &__envelope {
+    background-color: orange;
+  }
+}

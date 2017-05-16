@@ -1,7 +1,7 @@
 .featured-image {
   @extend %row;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 400px;
   height: 50vw;
   max-height: 70vh;
   width: 100%;
@@ -9,8 +9,10 @@
   overflow: hidden;
   position: relative;
   #featured-image {
-    width: 100%;
-    min-height: 300px;
+    height: 100%;
+    min-width: 100%;
+    background-size: cover;
+    background-position: center center;
     position: absolute;
   }
   &__meta {
@@ -18,6 +20,12 @@
     padding: 24px 30px;
     color: white;
     z-index: 1;
+  }
+  .meta__container {
+    font-size: 1.25em;
+  }
+  .meta__views {
+    float: right;
   }
   &__page-title {
     margin: 0;
@@ -38,10 +46,53 @@
 }
 section.main {
   @extend %row;
+  flex-wrap: wrap;
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    flex-direction: row;
+  }
   article {
-    @extend %col-xs-12;
+    // @extend %col-xs-10;
+    @extend %col-xs-10-wrap;
     @extend %col-lg-8;
     margin: 0 auto;
     margin-top: 20px;
+  }
+}
+.sidebar--posts {
+  @extend .sidebar;
+  order: 1;
+  background: darken(white, 5%);
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+  order: 0;
+  min-width: 350px;
+  box-shadow: -7px 0 20px 0;
+    &::before {
+      content: '';
+      height: 50px;
+      width: 100%;
+      position: absolute;
+      top: -50px;
+      background: inherit;
+    }
+  }
+  &__header {
+    text-align: center;
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      position: relative;
+      top: -50px;
+      margin: 0;
+      line-height: 50px;
+    }
+  }
+}
+.related-posts {
+  @extend %row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
   }
 }
