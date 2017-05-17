@@ -1,17 +1,14 @@
 version: '2'
 
-volumes:
-  app:
-
 services:
   fpm:
     build:
       context: ./
-      dockerfile: docker/images/bedrock/Dockerfile
+      dockerfile: docker/images/bedrock/Dockerfile.development
+    volumes:
+      - ./:/var/www/html
     depends_on:
       - db
-    volumes:
-      - app:/var/www/html
     env_file:
       - docker/env/fpm.env
       - docker/env/db.env
@@ -19,8 +16,8 @@ services:
   nginx:
     image: nginx
     volumes:
-      - app:/var/www/html
-      - ./site.production.conf:/etc/nginx/conf.d/site.conf
+      - ./:/var/www/html
+      - ./site.conf:/etc/nginx/conf.d/site.conf
     depends_on:
       - fpm
     ports:

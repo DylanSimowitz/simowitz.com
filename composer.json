@@ -35,7 +35,7 @@
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "4.4.11",
+        "version": "5.5.14",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
@@ -58,13 +58,14 @@
     "ext-mbstring": "^7.0",
     "jjgrainger/posttypes": "^1.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
-    "wpackagist-plugin/postman-smtp": "1.7.2",
     "wpackagist-plugin/ninja-forms": "^3.0",
     "roots/soil": "3.7.1",
     "wpackagist-plugin/autodescription": "^2.0",
     "wpackagist-plugin/amp": "^0.4.2",
     "wpackagist-plugin/schema": "^1.6",
-    "wpackagist-plugin/edit-author-slug": "^1.0"
+    "wpackagist-plugin/edit-author-slug": "^1.0",
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.0",
+    "wpackagist-plugin/acf-code-field": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
