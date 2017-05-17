@@ -1,7 +1,5 @@
 <section class="faq-section">
-<aside class="sidebar">
-  @php(dynamic_sidebar('sidebar-practices'))
-</aside>
+@include('partials.sidebar-practices')
 <div class="faq-container">
   <div class="accordion">
     @if(have_rows('questions'))

@@ -65,7 +65,7 @@ section.main {
   @media (min-width: map-get($grid-breakpoints, lg)) {
   order: 0;
   min-width: 350px;
-  box-shadow: -7px 0 20px 0;
+  box-shadow: -7px -6px 20px 0;
     &::before {
       content: '';
       height: 50px;

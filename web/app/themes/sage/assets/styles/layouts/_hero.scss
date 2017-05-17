@@ -5,7 +5,7 @@
 .slider {
   // height: 90vw;
   // max-height: 90vh;
-  max-width: map-get($grid-breakpoints, xxl);
+  // max-width: map-get($grid-breakpoints, xxl);
   margin: 0 auto;
   .flickity-page-dots {
     bottom: 10px;
@@ -38,14 +38,22 @@
     height: 100%;
   }
 }
-.slider__info-text {
-  @extend %col-xs;
+.slider__text-container {
   @extend %row;
+  @extend %col-xs;
+  @extend %col-md-9;
+  background-color: rgba(0,0,0,0.75);
+}
+.slider__info-text {
+  @extend %row;
+  @extend %col-xs-10;
+  max-width: map-get($grid-breakpoints, lg);
+  margin: 0 auto;
   flex-direction: column;
-  align-content: center;
+  // align-items: center;
+  justify-content: center;
   padding: 60px;
   color: white;
-  background-color: rgba(0,0,0,0.75);
   h2 {
     @extend .fadeIn;
     @extend .animated;
@@ -77,18 +85,23 @@
 }
 .slider__image {
   @extend %col-sm-hidden-down;
-  @extend %col-md;
+  @extend %col-md-3;
+  // @extend %col-xs;
   @extend %row;
   flex-direction: column;
   justify-content: flex-end;
   // max-width: 570px;
-  max-width: 370px;
+  // max-width: 370px;
+  max-width: 100%;
   background-color: rgba($gold, 0.25);
   // border-right: 2px solid $gold;
   position: relative;
   img {
     bottom: 0;
     width: 100%;
-    height: auto;
+    // height: auto;
+    max-height: 700px;
+    min-width: 300px;
+    // min-height: 700px;
   }
 }
