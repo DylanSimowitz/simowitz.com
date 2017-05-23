@@ -65,11 +65,13 @@
     "wpackagist-plugin/schema": "^1.6",
     "wpackagist-plugin/edit-author-slug": "^1.0",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.0",
-    "wpackagist-plugin/acf-code-field": "^1.0"
+    "wpackagist-plugin/acf-code-field": "^1.0",
+    "humanmade/s3-uploads": "^2.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
   },
+  "minimum-stability": "beta",
   "extra": {
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
