@@ -10,11 +10,11 @@ services:
       dockerfile: docker/images/bedrock/Dockerfile
     depends_on:
       - db
-    volumes:
-      - app:/var/www/html
     env_file:
       - docker/env/fpm.env
       - docker/env/db.env
+    volumes:
+      - app:/var/www/html
 
   nginx:
     image: nginx
