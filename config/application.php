@@ -57,6 +57,14 @@ define('DB_COLLATE', '');
 $table_prefix = env('DB_PREFIX') ?: 'wp_';
 
 /**
+ * S3 settings
+ */
+define( 'S3_UPLOADS_BUCKET', env('S3_UPLOADS_BUCKET'));
+define( 'S3_UPLOADS_KEY', env('AWS_ACCESS_KEY_ID'));
+define( 'S3_UPLOADS_SECRET', env('AWS_SECRET_ACCESS_KEY'));
+define( 'S3_UPLOADS_REGION', env('AWS_DEFAULT_REGION'));
+
+/**
  * Authentication Unique Keys and Salts
  */
 define('AUTH_KEY', env('AUTH_KEY'));
