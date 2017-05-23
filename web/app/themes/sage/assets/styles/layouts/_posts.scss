@@ -1,3 +1,9 @@
+.news__title {
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  background-color: darken(white, 10%);
+}
 .post-cards-container {
   background: darken(white, 5%);
   padding: 40px 0;
@@ -14,6 +20,9 @@
     display: block;
     clear: both;
   }
+  &__loading {
+    text-align: center;
+  }
 }
 figure.post-card {
   font-family: 'Raleway', Arial, sans-serif;
@@ -21,10 +30,11 @@ figure.post-card {
   position: relative;
   overflow: hidden;
   margin: 0;
-  margin-bottom: 10px;
-  min-width: 220px;
+  margin-bottom: 20px;
+  /* min-width: 220px; */
   max-width: 300px;
-  width: 100%;
+  // max-height: 40vh;
+  /* width: 100%; */
   // background: linear-gradient(45deg, lighten($purple, 15%), $purple);
   background: white;
   color: black;

@@ -8,7 +8,8 @@
 .sidebar--practices {
   @extend .sidebar;
   min-width: 265px;
-  background: linear-gradient(to bottom, lighten($purple, 45%), lighten($gold, 20%));
+  // background: linear-gradient(to bottom, lighten($purple, 45%), lighten($purple, 20%));
+  background: linear-gradient(to bottom, lighten($purple, 45%), lighten($purple, 45%));
   // background-color: lighten($purple, 50%);
   @media (max-width: 864px) {
     min-width: 220px;

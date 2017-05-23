@@ -18,11 +18,11 @@
                 @endif
               </div>
             </div>
+            @if(get_sub_field('image'))
             <div class="slider__image">
-              @if(get_sub_field('image'))
-                <img src="{{get_sub_field('image')['url']}}" alt="{{get_sub_field('image')['alt']}}">
-              @endif
+              <img src="{{get_sub_field('image')['url']}}" alt="{{get_sub_field('image')['alt']}}">
             </div>
+            @endif
           </div>
         @endwhile
       @endif

@@ -1,12 +1,4 @@
-function getElement(element) {
-  if (element.nodeType) {
-    return element;
-  } else if (typeof element === 'string') {
-    return document.querySelector(element);
-  } else {
-    return undefined;
-  }
-}
+import {getElement} from './helpers';
 
 class Sticky {
   constructor(element, trigger = undefined, start = 0, end = 0, resize = () => {}) {
@@ -16,22 +8,18 @@ class Sticky {
     this.element = getElement(element);
     this.trigger = getElement(trigger);
     this.onScroll = this.onScroll.bind(this);
+    this.isActive = false;
   }
   init() {
+    this.isActive = true;
     this.scrollTop = 0;
     this.trigger.style.position = 'relative';
     window.addEventListener('scroll', this.onScroll);
     window.addEventListener('resize', this.onResize.bind(this));
-    this.resize();
-    // window.addEventListener('load', this.onLoad.bind(this));
-  }
-  resizeElementWidth() {
-    this.element.style.width = this.trigger.offsetWidth + 'px';
+    window.addEventListener('load', this.onLoad.bind(this));
   }
   onResize() {
-    this.resize()
-  }
-  onLoad() {
+    this.resize();
   }
   onScroll() {
     if (window.requestAnimationFrame) {
@@ -40,8 +28,13 @@ class Sticky {
       setTimeout(this.makeSticky.bind(this), 250);
     }
   }
+  onLoad() {
+    this.resize();
+  }
   remove() {
+    this.isActive = false;
     window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize.bind(this));
     this.removeStyles();
   }
   removeStyles() {

@@ -12,9 +12,9 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), array('jquery', 'wp-api'), null, true);
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:300|Basic|Rufina|Montserrat|Andada|Maven+Pro', false, null);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Rufina|Montserrat|Andada', false, null);
 }, 100);
 
 /**
@@ -134,7 +134,7 @@ add_action('after_setup_theme', function () {
     config([
         'assets.manifest' => "{$paths['dir.stylesheet']}/dist/assets.json",
         'assets.uri'      => "{$paths['uri.stylesheet']}/dist",
-        'view.compiled'   => "{$paths['dir.upload']}/cache/compiled",
+        'view.compiled'   => WP_CONTENT_DIR . "/uploads/cache/compiled",
         'view.namespaces' => ['App' => WP_CONTENT_DIR],
         'view.paths'      => $viewPaths,
     ] + $paths);
@@ -196,7 +196,37 @@ add_action('after_setup_theme', function () {
         return '<?php endwhile; ?>';
     });
 });
+/**
+ * Attach a random image from unsplash if no featured image is set
+ */
+function simowitz_random_unsplash( $post_id ) {
+    // If no featured image set, grab one from unsplash
+    if(!has_post_thumbnail($post_id)) {
+        // Get a random image from the nature collection
+        $image = get_headers('https://source.unsplash.com/collection/384050/1600x900', 1)['Location'].'.jpg';
+        $media = media_sideload_image($image, $post_id);
+        if(!empty($media) && !is_wp_error($media)){
+            $args = array(
+                'post_type' => 'attachment',
+                'posts_per_page' => 1,
+                'post_status' => 'any',
+                'post_parent' => $post_id
+            );
 
+            // Reference new image to set as featured
+            $attachments = get_posts($args);
+
+            if($attachments){
+                foreach($attachments as $attachment){
+                    set_post_thumbnail($post_id, $attachment->ID);
+                    // Only want one image
+                    break;
+                }
+            }
+        }
+    }
+}
+add_action( 'save_post', 'App\\simowitz_random_unsplash' );
 /**
  * Init config
  */

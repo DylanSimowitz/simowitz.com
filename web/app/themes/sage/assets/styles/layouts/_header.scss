@@ -132,7 +132,7 @@ nav.header {
   a {
     text-decoration: none;
     color: black;
-    font-family: 'Basic';
+    font-family: 'Rufina';
   }
   // Primary navigation
   > li {
@@ -148,6 +148,9 @@ nav.header {
       display: flex;
       align-items: center;
       font-size: 1em;
+      font-family: 'Montserrat';
+      font-weight: bold;
+      text-shadow: 1px 1px black;
       @media (min-width: map-get($grid-breakpoints, lg)) {
         font-size: 1.20em;
       }

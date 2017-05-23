@@ -9,7 +9,7 @@ export default {
         gutter: 30,
         horizontalOrder: true,
         isFitWidth: true,
-      })
+      });
     });
   },
 };

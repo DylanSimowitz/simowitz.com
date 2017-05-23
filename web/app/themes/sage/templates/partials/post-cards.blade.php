@@ -4,10 +4,15 @@
   </div>
   {!! get_search_form(false) !!}
 @endif
+@php
+  $args = array(
+    'posts_per_page' => 10
+  )
+@endphp
 <div class="post-cards-container">
   <div class="post-cards">
-    @posts
+    @query($args)
       @include('partials.post-card')
-    @endposts
+    @endquery
   </div>
 </div>

@@ -1,15 +1,19 @@
 import Masonry from 'masonry-layout';
+import {MasonryGridPosts} from '../util/helpers';
+
 
 export default {
   init() {
+    const $gridElement = document.querySelector('.post-cards');
     window.addEventListener('load', () => {
-      new Masonry('.post-cards', {
+      const msnry = new Masonry($gridElement, {
         itemSelector: '.post-card',
         columnWidth: '.post-card',
-        gutter: 30,
+        gutter: 20,
         horizontalOrder: true,
-        isFitWidth: true,
-      })
+        fitWidth: true,
+      });
+      new MasonryGridPosts(msnry);
     });
   },
 };

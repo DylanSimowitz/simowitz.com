@@ -8,6 +8,6 @@
     )
   @endphp
   @foreach($sites as $name => $url)
-    <a target="_blank" class="btn--social social-buttons__{{$name}}" href="{{$url}}{{urlencode(get_permalink())}}"><i class="fa fa-{{$name}}"></i></a>
+    <a target="_blank" class="btn--social social-buttons__{{$name}}" href="{{$url.urlencode(get_permalink())}}"><i class="fa fa-{{$name}}"></i></a>
   @endforeach
 </aside>

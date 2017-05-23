@@ -40,8 +40,9 @@
 }
 .slider__text-container {
   @extend %row;
-  @extend %col-xs;
-  @extend %col-md-9;
+  /* @extend %col-xs; */
+  /* @extend %col-md-9; */
+  width: 100%;
   background-color: rgba(0,0,0,0.75);
 }
 .slider__info-text {
@@ -79,13 +80,13 @@
     }
   }
   .slider__CAB {
-    margin-top: auto;
-    align-self: flex-end;
+    margin-top: 40px;
+    /* align-self: center; */
   }
 }
 .slider__image {
   @extend %col-sm-hidden-down;
-  @extend %col-md-3;
+  /* @extend %col-md-3; */
   // @extend %col-xs;
   @extend %row;
   flex-direction: column;

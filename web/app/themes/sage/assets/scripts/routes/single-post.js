@@ -1,26 +1,44 @@
 import Sticky from '../util/sticky';
 import Parallax from '../util/parallax';
 import {recalculateWidth} from '../util/helpers';
-import _ from 'lodash';
+import {debounce} from 'lodash';
 
 export default {
   init() {
     const $posts = document.querySelector('.related-posts');
     const $sidebar = document.querySelector('.sidebar--posts');
+    const $socialButtons = document.querySelector('.social-buttons');
+    const $main = document.querySelector('section.main');
+    // const $article = document.querySelector('article');
 
     new Parallax('#featured-image').init();
-    new Sticky('.social-buttons', 'section.main', 100, 50).init();
-    const stickySidebar = new Sticky($posts, $sidebar, 0, 0, _.debounce(removeSidebar, 250));
-    stickySidebar.init();
+    const stickySocialButtons = new Sticky($socialButtons, $main, 150, 50, debounce(removeSocialButtons, 250));
+    const stickySidebar = new Sticky($posts, $sidebar, 0, 0, debounce(removeSidebar, 250));
 
-    function removeSidebar() {
-      if (window.innerWidth < 992) {
-        stickySidebar.remove();
-        $posts.style.width = '';
-      }
-      else {
+    window.addEventListener('load', () => {
+      if (window.innerWidth > 992) {
+        stickySocialButtons.init();
         stickySidebar.init();
         recalculateWidth($posts, $sidebar);
+      }
+    });
+
+
+    function removeSocialButtons() {
+      if (window.innerWidth >= 992 && !stickySocialButtons.isActive) {
+        stickySocialButtons.init();
+      } else if (window.innerWidth < 992 && stickySocialButtons.isActive) {
+        stickySocialButtons.remove();
+      }
+    }
+
+    function removeSidebar() {
+      if (window.innerWidth >= 992 && !stickySidebar.isActive) {
+        stickySidebar.init();
+        recalculateWidth($posts, $sidebar);
+      } else if (window.innerWidth < 992 && stickySidebar.isActive) {
+        stickySidebar.remove();
+        $posts.style.width = '';
       }
     }
   },

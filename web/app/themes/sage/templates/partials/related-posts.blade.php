@@ -17,7 +17,7 @@
     <h3 class="sidebar--posts__header">Related Posts</h3>
     <div class="related-posts">
       @query($args)
-        @include('partials.post-card')
+        @include('partials.post-card', ['short' => 'true'])
       @endquery
       @php(wp_reset_postdata())
     </div>

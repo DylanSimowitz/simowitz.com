@@ -3,7 +3,7 @@
 @section('content')
   @include('partials.featured-image')
   <section class="main">
-    <aside class="sidebar">
+    <aside class="sidebar--practices">
       @php(dynamic_sidebar('sidebar-practices'))
     </aside>
     {{-- <aside class="sidebar--contact"> --}}

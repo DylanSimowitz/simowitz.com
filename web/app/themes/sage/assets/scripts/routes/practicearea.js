@@ -9,6 +9,6 @@ export default {
 
     new Parallax('#featured-image').init();
     new Sticky($menu, $sidebar).init();
-    new Sticky('.social-buttons', 'section.main', 100, 50, recalculateWidth).init();
+      new Sticky('.social-buttons', 'section.main', 100, 50, () => recalculateWidth($menu, $sidebar)).init();
   },
 };
