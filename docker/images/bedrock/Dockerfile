@@ -1,8 +1,8 @@
 FROM toxicsalt/bedrock
 
-COPY composer.json composer.lock .
+COPY composer.json composer.lock ./
 RUN composer install
-COPY web/app/themes/sage/package.json web/app/themes/sage/yarn.lock ./web/app/themes/sage
+COPY web/app/themes/sage/package.json web/app/themes/sage/yarn.lock ./web/app/themes/sage/
 RUN npm install
 RUN npm build:production
-COPY . .
+COPY . ./
