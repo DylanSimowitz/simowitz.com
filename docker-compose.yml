@@ -6,6 +6,8 @@ volumes:
 services:
   fpm:
     build:
+      args:
+        - ACF_PRO_KEY
       context: ./
       dockerfile: docker/images/bedrock/Dockerfile
     depends_on:
