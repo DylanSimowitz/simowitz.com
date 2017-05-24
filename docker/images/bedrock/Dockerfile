@@ -1,4 +1,4 @@
-FROM toxicsalt/bedrock
+FROM toxicsalt/bedrock:latest
 
 COPY composer.json composer.lock ./
 RUN composer install
