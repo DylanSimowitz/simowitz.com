@@ -9,7 +9,6 @@ services:
       args:
         - ACF_PRO_KEY
       context: ./
-      dockerfile: docker/images/bedrock/Dockerfile
     depends_on:
       - db
     env_file:
