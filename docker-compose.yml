@@ -15,27 +15,30 @@ services:
       - docker/env/fpm.env
       - docker/env/db.env
     image: simowitz.com
+    restart: always
     volumes:
       - app:/var/www/html
 
   nginx:
-    image: nginx
-    volumes:
-      - app:/var/www/html
-      - ./site.conf:/etc/nginx/conf.d/site.conf
     depends_on:
       - fpm
     environment:
       - VIRTUAL_HOST=simowitz.com,www.simowitz.com
       - LETSENCRYPT_HOST=simowitz.com,www.simowitz.com
       - LETSENCRYPT_EMAIL=dsimowitz@gmail.com
+    image: nginx
+    restart: always
+    volumes:
+      - app:/var/www/html
+      - ./site.conf:/etc/nginx/conf.d/site.conf
 
   db:
-    image: mariadb
-    ports:
-      - 3306:3306
     env_file:
       - docker/env/db.env
+    image: mariadb
+    restart: always
+    ports:
+      - 3306:3306
 
 networks:
   default:
