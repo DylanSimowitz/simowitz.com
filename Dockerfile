@@ -6,10 +6,10 @@ RUN yarn run build:production
 
 FROM composer/composer:alpine as dependencies
 ARG ACF_PRO_KEY
-WORKDIR /composer/
+WORKDIR /app/
 COPY composer.json composer.lock ./
 RUN composer install
-WORKDIR /composer/web/app/themes/sage/
+WORKDIR /theme/
 COPY web/app/themes/sage/composer.json web/app/themes/sage/composer.lock ./
 RUN composer install
 
@@ -28,8 +28,9 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 VOLUME /var/www/html
 WORKDIR ./web/app/themes/sage/
 COPY --from=build /workspace ./
+COPY --from=dependencies /theme ./
 WORKDIR /var/www/html/
-COPY --from=dependencies /composer ./
+COPY --from=dependencies /app ./
 COPY . ./
 USER root
 RUN chown -R www-data:www-data ./
