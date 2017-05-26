@@ -22,7 +22,7 @@ services:
     image: nginx
     volumes:
       - app:/var/www/html
-      - ./site.production.conf:/etc/nginx/conf.d/site.conf
+      - ./site.conf:/etc/nginx/conf.d/site.conf
     depends_on:
       - fpm
     ports:
