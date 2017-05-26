@@ -9,7 +9,7 @@ ARG ACF_PRO_KEY
 WORKDIR /composer/
 COPY composer.json composer.lock ./
 RUN composer install
-WORKDIR ./web/app/themes/sage/
+WORKDIR /composer/web/app/themes/sage/
 COPY web/app/themes/sage/composer.json web/app/themes/sage/composer.lock ./
 RUN composer install
 
