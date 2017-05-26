@@ -31,3 +31,4 @@ WORKDIR /var/www/html/
 COPY . ./
 USER root
 RUN chown -R www-data:www-data ./
+VOLUME ./
