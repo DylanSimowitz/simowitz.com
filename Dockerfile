@@ -24,6 +24,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
     && mv wp-cli.phar /bin/wp
+VOLUME /var/www/html
 COPY --from=dependencies /composer ./
 WORKDIR ./web/app/themes/sage/
 COPY --from=build /workspace ./
@@ -31,4 +32,3 @@ WORKDIR /var/www/html/
 COPY . ./
 USER root
 RUN chown -R www-data:www-data ./
-VOLUME ./
