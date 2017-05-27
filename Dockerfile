@@ -6,7 +6,7 @@ RUN yarn run build:production
 
 FROM composer/composer:alpine as dependencies
 ARG ACF_PRO_KEY
-WORKDIR /app/
+WORKDIR /composer/
 COPY composer.json composer.lock ./
 RUN composer install
 WORKDIR /theme/
@@ -25,12 +25,12 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
     && mv wp-cli.phar /bin/wp
-VOLUME /var/www/html
-WORKDIR ./web/app/themes/sage/
+COPY . ./
+COPY --from=dependencies /composer ./
+WORKDIR /var/www/html/web/app/themes/sage/
 COPY --from=build /workspace ./
 COPY --from=dependencies /theme ./
 WORKDIR /var/www/html/
-COPY --from=dependencies /app ./
-COPY . ./
 USER root
 RUN chown -R www-data:www-data ./
+USER www-data
