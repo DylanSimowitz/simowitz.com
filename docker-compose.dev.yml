@@ -16,7 +16,7 @@ services:
     restart: on-failure
     volumes:
       - ./:/var/www/html
-      - ./docker/config/nginx/site.template:/etc/nginx/conf.d/site.template
+      - ./docker/config/nginx/site.template:/etc/nginx/conf.d/site.conf
 
   db:
     restart: on-failure
