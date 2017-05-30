@@ -1,0 +1,4 @@
+FROM toxicsalt/wordpress
+RUN echo "http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories
+RUN apk update && apk add --no-cache shadow
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
