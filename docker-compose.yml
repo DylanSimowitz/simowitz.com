@@ -26,7 +26,7 @@ services:
       - VIRTUAL_HOST=simowitz.com,www.simowitz.com
       - LETSENCRYPT_HOST=simowitz.com,www.simowitz.com
       - LETSENCRYPT_EMAIL=dsimowitz@gmail.com
-    image: nginx
+    image: nginx:alpine
     restart: always
     volumes:
       - app:/var/www/html

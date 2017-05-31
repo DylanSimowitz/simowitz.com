@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  fpm:
+    build:
+      args:
+        - UID=1000
+        - GID=1000
+      context: ./
+      dockerfile: Dockerfile.dev
+    image: simowitz.test
+    restart: on-failure
+    volumes:
+      - ./:/var/www/html
+
+  nginx:
+    environment:
+      - VIRTUAL_HOST=simowitz.test,www.simowitz.test
+    restart: on-failure
+    volumes:
+      - ./:/var/www/html
+      - ./docker/config/nginx/site.template:/etc/nginx/conf.d/site.conf
+
+  db:
+    restart: on-failure
