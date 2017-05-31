@@ -1,1 +1,0 @@
-FROM toxicsalt/bedrock:latest
