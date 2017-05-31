@@ -1,1 +1,1 @@
-A bedrock based site running on dokku
+A bedrock based site running on Docker
