@@ -15,17 +15,19 @@ export default {
     const stickySocialButtons = new Sticky($socialButtons, $main, 150, 50, debounce(removeSocialButtons, 250));
     const stickySidebar = new Sticky($posts, $sidebar, 0, 0, debounce(removeSidebar, 250));
 
+    stickySidebar.init();
+    stickySocialButtons.init();
+
     window.addEventListener('load', () => {
-      if (window.innerWidth > 992) {
-        stickySocialButtons.init();
-        stickySidebar.init();
-        recalculateWidth($posts, $sidebar);
-      }
+      removeSocialButtons();
+      removeSidebar();
     });
 
 
     function removeSocialButtons() {
-      if (window.innerWidth >= 992 && !stickySocialButtons.isActive) {
+      if (window.innerWidth >= 992 && stickySocialButtons.isActive) {
+        // recalculateWidth($posts, $sidebar);
+      } else if (window.innerWidth >= 992 && !stickySocialButtons.isActive) {
         stickySocialButtons.init();
       } else if (window.innerWidth < 992 && stickySocialButtons.isActive) {
         stickySocialButtons.remove();
@@ -33,7 +35,9 @@ export default {
     }
 
     function removeSidebar() {
-      if (window.innerWidth >= 992 && !stickySidebar.isActive) {
+      if (window.innerWidth >= 992 && stickySidebar.isActive) {
+        recalculateWidth($posts, $sidebar);
+      } else if (window.innerWidth >= 992 && !stickySidebar.isActive) {
         stickySidebar.init();
         recalculateWidth($posts, $sidebar);
       } else if (window.innerWidth < 992 && stickySidebar.isActive) {

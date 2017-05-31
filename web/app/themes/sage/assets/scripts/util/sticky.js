@@ -8,6 +8,8 @@ class Sticky {
     this.element = getElement(element);
     this.trigger = getElement(trigger);
     this.onScroll = this.onScroll.bind(this);
+    this.onResize = this.onResize.bind(this);
+    this.onLoad = this.onLoad.bind(this);
     this.isActive = false;
   }
   init() {
@@ -15,8 +17,8 @@ class Sticky {
     this.scrollTop = 0;
     this.trigger.style.position = 'relative';
     window.addEventListener('scroll', this.onScroll);
-    window.addEventListener('resize', this.onResize.bind(this));
-    window.addEventListener('load', this.onLoad.bind(this));
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('load', this.onLoad);
   }
   onResize() {
     this.resize();
@@ -29,12 +31,12 @@ class Sticky {
     }
   }
   onLoad() {
-    this.resize();
+    this.makeSticky();
   }
   remove() {
     this.isActive = false;
     window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onResize.bind(this));
+    // window.removeEventListener('resize', this.onResize);
     this.removeStyles();
   }
   removeStyles() {
