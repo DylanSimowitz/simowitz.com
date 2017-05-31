@@ -14,12 +14,12 @@ COPY web/app/themes/sage/composer.json web/app/themes/sage/composer.lock ./
 RUN composer install
 
 FROM toxicsalt/wordpress as app
+COPY . ./
 COPY --from=dependencies /composer ./
 WORKDIR /var/www/html/web/app/themes/sage/
 COPY --from=build /workspace ./
 COPY --from=dependencies /theme ./
 WORKDIR /var/www/html/
-COPY . ./
 USER root
 RUN chown -R www-data:www-data ./
 USER www-data
