@@ -4,7 +4,7 @@ import 'jquery.mmenu/dist/wrappers/wordpress/jquery.mmenu.wordpress.min';
 import 'jquery.mmenu/dist/addons/navbars/jquery.mmenu.navbars.min';
 import 'jquery.mmenu/dist/addons/offcanvas/jquery.mmenu.offcanvas.min';
 import 'jquery.mmenu/dist/addons/fixedelements/jquery.mmenu.fixedelements.min';
-import svgInjector from 'svg-injector';
+// import svgInjector from 'svg-injector';
 import Hamburger from '../components/Hamburger';
 import Header from '../util/header';
 
@@ -12,7 +12,7 @@ export default {
   init() {
     // JavaScript to be fired on all pages
     const mobileMenu = jQuery('.nav-primary');
-    svgInjector(document.querySelectorAll('.inject-svg'));
+    // svgInjector(document.querySelectorAll('.inject-svg'));
     new Header('nav.header', '.sticky--hide').init();
     mobileMenu.mmenu({}, {
       clone: true,

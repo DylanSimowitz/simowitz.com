@@ -1,3 +1,8 @@
 <footer class="content-info">
-  @php(dynamic_sidebar('sidebar-footer'))
+  <div class="footer__container">
+    @include('partials.consultation')
+    <div class="widgets">
+      @php(dynamic_sidebar('sidebar-footer'))
+    </div>
+  </div>
 </footer>

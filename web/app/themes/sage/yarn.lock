@@ -1643,7 +1643,7 @@ etag@^1.7.0, etag@~1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.7.0.tgz#03d30b5f67dd6e632d2945d30d6652731a34d5d8"
 
-ev-emitter@^1.0.2, ev-emitter@~1.0.1:
+ev-emitter@^1.0.0, ev-emitter@^1.0.2, ev-emitter@~1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/ev-emitter/-/ev-emitter-1.0.3.tgz#ee5ef74b6ed28d911b32ddcbfc97867f580937bc"
 
@@ -2009,7 +2009,7 @@ get-proxy@^1.0.1:
   dependencies:
     rc "^1.1.2"
 
-get-size@^2.0.0:
+get-size@^2.0.0, get-size@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/get-size/-/get-size-2.0.2.tgz#555ea98ab8732e0c021e9e23e2219adcbe398e98"
 
@@ -3150,6 +3150,13 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
+masonry-layout@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/masonry-layout/-/masonry-layout-4.2.0.tgz#43835c6b6e0d72eff2c31a118c8000cccc4ab965"
+  dependencies:
+    get-size "^2.0.2"
+    outlayer "^2.1.0"
+
 math-expression-evaluator@^1.2.14:
   version "1.2.15"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.15.tgz#38dc5f0194c5bf5ff1c690ad4c4b64df71ac0187"
@@ -3262,6 +3269,10 @@ mkdirp@0.3.0:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+moment@^2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
 mozjpeg@^4.0.0:
   version "4.1.1"
@@ -3589,6 +3600,14 @@ osenv@0:
   dependencies:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
+
+outlayer@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/outlayer/-/outlayer-2.1.0.tgz#83b7beefc19becd3278c8ade988d268788d6f93d"
+  dependencies:
+    ev-emitter "^1.0.0"
+    fizzy-ui-utils "^2.0.0"
+    get-size "^2.0.2"
 
 p-finally@^1.0.0:
   version "1.0.0"

@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  fpm:
+    build:
+      context: ./
+      dockerfile: docker/images/bedrock/Dockerfile.development
+    volumes:
+      - ./:/var/www/html
+
+  nginx:
+    volumes:
+      - ./:/var/www/html
+      - ./site.conf:/etc/nginx/conf.d/site.conf

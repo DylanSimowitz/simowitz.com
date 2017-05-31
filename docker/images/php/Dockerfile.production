@@ -1,0 +1,25 @@
+FROM php:fpm
+
+WORKDIR /var/www/html
+RUN apt-get update && apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libmcrypt-dev \
+        libpng12-dev \
+        less \
+        awscli \
+        nodejs \
+        npm \
+RUN docker-php-ext-install -j$(nproc) iconv mcrypt mysqli \
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd \
+RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod +x wp-cli.phar \
+    && mv wp-cli.phar /bin/wp
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY composer.json composer.lock .
+RUN npm install
+COPY web/app/themes/sage/package.json web/app/themes/sage/yarn.lock ./web/app/themes/sage
+RUN yarn
+COPY . .

@@ -5,14 +5,16 @@
   color: white;
   background-color: rgba(0,0,0,0.10);
   text-decoration: none;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 1.75em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25em;
   position: relative;
+  transistion: all 1.25s;
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: rgba(255,255,255,0.25);
-    transition: background-color 1.25s;
+    width: 0%;
+    // background-color: rgba(255,255,255,0.15);
+    transition: all 1.25s;
   }
   &:hover:before {
     width: 100%;
@@ -24,9 +26,10 @@
     top: 0;
     left: 0;
     width: 0px;
-    height: 3px;
+    height: 1px;
     background-color: $gold;
     display: inline-block;
+    transition: all 1.25s;
   }
   &:hover:after { 
     width: 100%;
@@ -38,10 +41,45 @@
     bottom: 0;
     right: 0;
     width: 0px;
-    height: 3px;
+    height: 1px;
     background-color: $gold;
-    display: inline-block; 
+    display: inline-block;
+    transition: all 1.25s;
   }
 }
 .btn--menu {
+}
+.btn--social {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: white;
+  text-decoration: none;
+  i {
+    font-size: 1.65em;
+  }
+}
+.social-buttons {
+  position: absolute; 
+  right: 0;
+  display: flex;
+  z-index: 3;
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    flex-direction: column;
+  }
+  &__facebook {
+    background-color: $facebook;
+  }
+  &__twitter {
+    background-color: $twitter;
+  }
+  &__google-plus {
+    background-color: $google;
+  }
+  &__envelope {
+    background-color: orange;
+  }
 }

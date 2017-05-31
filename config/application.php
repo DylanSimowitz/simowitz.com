@@ -14,11 +14,11 @@ Env::init();
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  */
-$dotenv = new Dotenv\Dotenv($root_dir);
-if (file_exists($root_dir . '/.env')) {
-    $dotenv->load();
-    $dotenv->required(['DATABASE_URL', 'WP_HOME', 'WP_SITEURL']);
-}
+// $dotenv = new Dotenv\Dotenv($root_dir);
+// if (file_exists($root_dir . '/.env')) {
+    // $dotenv->load();
+    // $dotenv->required(['WP_HOME', 'WP_SITEURL']);
+// }
 
 /**
  * Set up our global environment constant and load its config first
@@ -48,14 +48,21 @@ define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
 /**
  * DB settings
  */
-$db = parse_url(env("DATABASE_URL"));
-define('DB_NAME', trim($db["path"],"/"));
-define('DB_USER', $db["user"]);
-define('DB_PASSWORD', $db["pass"]);
-define('DB_HOST', $db["host"]);
+define('DB_NAME', env('MYSQL_DATABASE'));
+define('DB_USER', env('MYSQL_USER'));
+define('DB_PASSWORD', env('MYSQL_PASSWORD'));
+define('DB_HOST', 'db');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 $table_prefix = env('DB_PREFIX') ?: 'wp_';
+
+/**
+ * S3 settings
+ */
+define( 'S3_UPLOADS_BUCKET', env('S3_UPLOADS_BUCKET'));
+define( 'S3_UPLOADS_KEY', env('AWS_ACCESS_KEY_ID'));
+define( 'S3_UPLOADS_SECRET', env('AWS_SECRET_ACCESS_KEY'));
+define( 'S3_UPLOADS_REGION', env('AWS_DEFAULT_REGION'));
 
 /**
  * Authentication Unique Keys and Salts

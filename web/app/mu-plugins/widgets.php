@@ -25,24 +25,28 @@ class ACF_Address_Widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
 ?>
-<div itemscope itemtype="http://schema.org/LocalBusiness">
-  <i class="fa fa-balance-scale fa-fw" aria-hidden="true"></i> 
-  <span itemprop="name"><?php the_field('company_name', 'options')?></span>
-  <br>
-  <span itemprop="telephone">
+<div class="contact-widget">
+  <div>
+    <i class="fa fa-balance-scale fa-fw" aria-hidden="true"></i> 
+    <span><?php the_field('company_name', 'options')?></span>
+  </div>
+  <div>
     <i class="fa fa-phone fa-fw" aria-hidden="true"></i>
     <a href="tel:<?php the_field('phone', 'options') ?>">
-      <?php the_field('phone', 'options') ?> 
+      <span><?php the_field('phone', 'options') ?></span>
     </a>
-  </span>
-  <br>
-  <address itemprop="address" itemtype="http://schema.org/PostalAddress">
-    <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
-    <span itemprop="streetAddress"><?php the_field('street', 'options') ?></span>
-    <br>
-    <span itemprop="addressLocality"><?php the_field('city', 'options') ?></span>
-    <span itemprop="addressRegion"><?php the_field('state', 'options') ?></span>
-    <span itemprop="postalCode"><?php the_field('zipcode', 'options') ?></span>
+  </div>
+  <address>
+    <div>
+      <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
+    </div>
+    <div>
+      <span><?php the_field('street', 'options') ?></span>
+      <br>
+      <span><?php the_field('city', 'options') ?></span>
+      <span><?php the_field('state', 'options') ?></span>
+      <span><?php the_field('zipcode', 'options') ?></span>
+    </div>
   </address>
 </div>
   <?php

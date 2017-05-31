@@ -4,15 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c143f29af504a8b550aab97f8482aede",
-    "content-hash": "e1f94d9db6f388c78d62a79dae0e98c2",
+    "content-hash": "ae557ec1c023313d84f86a3fe1c351d7",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
-            "version": "4.4.11",
+            "version": "5.5.14",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&t=4.4.11",
+                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&t=5.5.14",
                 "reference": null,
                 "shasum": null
             },
@@ -120,24 +119,63 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-13 19:46:30"
+            "time": "2016-04-13T19:46:30+00:00"
         },
         {
-            "name": "jjgrainger/posttypes",
-            "version": "v1.0",
+            "name": "humanmade/s3-uploads",
+            "version": "v2.0.0-beta3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jjgrainger/PostTypes.git",
-                "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf"
+                "url": "https://github.com/humanmade/S3-Uploads.git",
+                "reference": "d3c8d81fa57e4535271fbe47c9cef2e54b54da3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jjgrainger/PostTypes/zipball/69d25ea289a984b6a8b068a7038aee66e9a6e0bf",
-                "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf",
+                "url": "https://api.github.com/repos/humanmade/S3-Uploads/zipball/d3c8d81fa57e4535271fbe47c9cef2e54b54da3c",
+                "reference": "d3c8d81fa57e4535271fbe47c9cef2e54b54da3c",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made Limited",
+                    "email": "support@humanmade.co.uk",
+                    "homepage": "http://hmn.md/"
+                }
+            ],
+            "description": "WordPress plugin to store uploads on S3",
+            "homepage": "https://github.com/humanmade/S3-Uploads",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2017-03-15T04:01:31+00:00"
+        },
+        {
+            "name": "jjgrainger/posttypes",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jjgrainger/PostTypes.git",
+                "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jjgrainger/PostTypes/zipball/736c43ecf3e6272a1b18c3857ecea3ac4b030745",
+                "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.8"
             },
             "type": "library",
             "autoload": {
@@ -156,26 +194,64 @@
                     "homepage": "http://jjgrainger.co.uk"
                 }
             ],
-            "description": "A single class to help you build more advanced custom post types quickly.",
+            "description": "Simple WordPress custom post types.",
             "homepage": "https://github.com/jjgrainger/posttype",
-            "time": "2016-08-16 12:45:44"
+            "time": "2017-05-19T12:53:48+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.7.2",
+            "version": "4.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "ac7b1792641d1fb61cb2901db292903b31694057"
+                "reference": "381ef55a27e1dcc1c4bbe8b0c6a7ba2d45623819"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/ac7b1792641d1fb61cb2901db292903b31694057",
-                "reference": "ac7b1792641d1fb61cb2901db292903b31694057",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/381ef55a27e1dcc1c4bbe8b0c6a7ba2d45623819",
+                "reference": "381ef55a27e1dcc1c4bbe8b0c6a7ba2d45623819",
                 "shasum": ""
             },
             "require": {
+                "johnpbloch/wordpress-core": "4.7.5",
                 "johnpbloch/wordpress-core-installer": "~0.2",
+                "php": ">=5.3.2"
+            },
+            "type": "package",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "http://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is web software you can use to create a beautiful website or blog.",
+            "homepage": "http://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "time": "2017-05-16T22:48:14+00:00"
+        },
+        {
+            "name": "johnpbloch/wordpress-core",
+            "version": "4.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress-core.git",
+                "reference": "9a88a4b4c65f689d78789ef6ff77a7ca0239ec02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/9a88a4b4c65f689d78789ef6ff77a7ca0239ec02",
+                "reference": "9a88a4b4c65f689d78789ef6ff77a7ca0239ec02",
+                "shasum": ""
+            },
+            "require": {
                 "php": ">=5.3.2"
             },
             "type": "wordpress-core",
@@ -193,9 +269,10 @@
             "homepage": "http://wordpress.org/",
             "keywords": [
                 "blog",
-                "cms"
+                "cms",
+                "wordpress"
             ],
-            "time": "2017-01-26 18:32:19"
+            "time": "2017-05-16T22:48:08+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -243,7 +320,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-06-11 15:15:30"
+            "time": "2015-06-11T15:15:30+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -285,7 +362,7 @@
             "keywords": [
                 "env"
             ],
-            "time": "2016-05-08 17:14:32"
+            "time": "2016-05-08T17:14:32+00:00"
         },
         {
             "name": "philippbaschke/acf-pro-installer",
@@ -341,7 +418,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-07-20 10:19:36"
+            "time": "2016-07-20T10:19:36+00:00"
         },
         {
             "name": "roots/soil",
@@ -386,7 +463,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2016-08-30 18:15:45"
+            "time": "2016-08-30T18:15:45+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -443,7 +520,7 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01 16:27:06"
+            "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -493,7 +570,27 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/acf-code-field",
+            "version": "1.6.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/acf-code-field/",
+                "reference": "tags/1.6.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/acf-code-field.1.6.3.zip",
+                "reference": "tags/1.6.3",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/acf-code-field/"
         },
         {
             "name": "wpackagist-plugin/amp",
@@ -517,16 +614,16 @@
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "2.8.2",
+            "version": "2.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/2.8.2"
+                "reference": "tags/2.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.2.8.2.zip",
-                "reference": "tags/2.8.2",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.2.9.2.zip",
+                "reference": "tags/2.9.2",
                 "shasum": null
             },
             "require": {
@@ -536,17 +633,37 @@
             "homepage": "https://wordpress.org/plugins/autodescription/"
         },
         {
-            "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.0.27",
+            "name": "wpackagist-plugin/edit-author-slug",
+            "version": "1.4.1",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.0.27"
+                "url": "https://plugins.svn.wordpress.org/edit-author-slug/",
+                "reference": "tags/1.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.0.27.zip",
-                "reference": "tags/3.0.27",
+                "url": "https://downloads.wordpress.org/plugin/edit-author-slug.1.4.1.zip",
+                "reference": "tags/1.4.1",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/edit-author-slug/"
+        },
+        {
+            "name": "wpackagist-plugin/ninja-forms",
+            "version": "3.1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ninja-forms/",
+                "reference": "tags/3.1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.1.2.zip",
+                "reference": "tags/3.1.2",
                 "shasum": null
             },
             "require": {
@@ -554,26 +671,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ninja-forms/"
-        },
-        {
-            "name": "wpackagist-plugin/postman-smtp",
-            "version": "1.7.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/postman-smtp/",
-                "reference": "tags/1.7.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/postman-smtp.1.7.2.zip",
-                "reference": "tags/1.7.2",
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/postman-smtp/"
         },
         {
             "name": "wpackagist-plugin/schema",
@@ -586,7 +683,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/schema.zip",
-                "reference": null,
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -594,65 +691,41 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/schema/"
+        },
+        {
+            "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
+            "version": "1.11.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.zip?timestamp=1495021825",
+                "reference": "trunk",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/sendgrid-email-delivery-simplified/"
         }
     ],
     "packages-dev": [
         {
-            "name": "heroku/heroku-buildpack-php",
-            "version": "v119",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "26ebb69005d467d45f75797c1594f60818ba3fce"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/26ebb69005d467d45f75797c1594f60818ba3fce",
-                "reference": "26ebb69005d467d45f75797c1594f60818ba3fce",
-                "shasum": ""
-            },
-            "bin": [
-                "bin/heroku-hhvm-apache2",
-                "bin/heroku-hhvm-nginx",
-                "bin/heroku-php-apache2",
-                "bin/heroku-php-nginx"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David Zuelke",
-                    "email": "dz@heroku.com"
-                }
-            ],
-            "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
-            "homepage": "https://github.com/heroku/heroku-buildpack-php",
-            "keywords": [
-                "apache",
-                "apache2",
-                "foreman",
-                "heroku",
-                "hhvm",
-                "nginx",
-                "php"
-            ],
-            "time": "2017-01-21 00:39:13"
-        },
-        {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.8.0",
+            "version": "2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "86dd55a522238211f9f3631e3361703578941d9a"
+                "reference": "dcbed1074f8244661eecddfc2a675430d8d33f62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/86dd55a522238211f9f3631e3361703578941d9a",
-                "reference": "86dd55a522238211f9f3631e3361703578941d9a",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dcbed1074f8244661eecddfc2a675430d8d33f62",
+                "reference": "dcbed1074f8244661eecddfc2a675430d8d33f62",
                 "shasum": ""
             },
             "require": {
@@ -717,11 +790,11 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-02-02 03:30:00"
+            "time": "2017-05-22T02:43:20+00:00"
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "beta",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -20,15 +20,6 @@
           </aside>
         @endif
       </div>
-      <div class="consultation" style="background-image: url({{the_field('contact_form_background_image', 'option')}})">
-        <div class="consultation__text"> 
-          <h3 class="consultation__title">{{the_field('contact_form_title', 'option')}}</h3>
-          <p class="consultation__description">{{the_field('contact_form_text', 'option')}}</p>
-        </div>
-        <div class="consultation__form" id="consultation">
-          @php(Ninja_Forms()->display(get_field('contact_select_form', 'option')))
-        </div>
-      </div>
       @php(do_action('get_footer'))
       @include('partials.footer')
       @php(wp_footer())

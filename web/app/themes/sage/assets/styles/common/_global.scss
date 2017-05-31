@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: black;
 }
 
 .main {
@@ -12,38 +12,55 @@ body {
 .wrap {
   background-color: white;
 }
+.wrapper {
+  max-width: map-get($grid-breakpoints, xxl);
+  margin: 0 auto;
+}
 .container {
   width: 100%;
+  // max-width: map-get($grid-breakpoints, xxl);
+  // margin: 0 auto;
+}
+
+article {
+  position: relative;
+  max-width: map-get($grid-breakpoints, lg);
+  margin: 0 auto;
+  overflow-y: hidden;
 }
 
 h1, h2, h3, h4 {
-  margin: 1.414em 0 0.5em;
+  margin: 1em 0 0.5em;
   line-height: 1.2;
-  font-family: 'Open Sans Condensed', serif;
+  font-family: 'Montserrat', serif;
 }
 
 
 h1 {
-  @include responsive-font(5vw, 35px, 80px);
+  // @include responsive-font(5vw, 35px, 80px);
+  font-size: 2.25em;
   margin-top: 0;
 }
 
 h2 {
-  @include responsive-font(3.333vw, 30px, 70px);
-  font-size: 3.375vw;
+  font-size: 2em;
+  // @include responsive-font(3.333vw, 30px, 70px);
+  // font-size: 3.375vw;
 }
 
 h3 {
-  @include responsive-font(2.25vw, 25px, 60px);
+  font-size: 1.75em;
+  // @include responsive-font(2.25vw, 25px, 60px);
 }
 
 h4 {
-  @include responsive-font(1.5vw, 20px, 50px);
+  font-size: 1.35em;
+  // @include responsive-font(1.5vw, 20px, 50px);
 }
 
 p {
-  font-family: 'Merriweather', sans-serif;
-  line-height: 1.75em;
+  font-family: 'Andada', sans-serif;
+  line-height: 2;
 }
 
 code {

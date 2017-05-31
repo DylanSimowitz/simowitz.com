@@ -22,53 +22,154 @@ input[type=text],
 input[type=tel],
 input[type=email],
 textarea {
-  border: 2px solid #666;
-  min-height: 60px;
-  width: 100%;
-  padding-left: 8px;
-  color: #999;
-  font-family: 'Cabin', sans-serif;
-  font-size: 1.2em;
-  &:focus {
-    outline: none;
-  }
-  &::placeholder {
-    color: #777;
-  }
+  // min-height: 60px;
 }
-
+.consultation-section {
+  // background-color: lighten($purple, 20%);
+  background: linear-gradient(45deg, lighten($purple, 30%), lighten($purple, 50%));
+  // background-size: cover;
+  // background-position: bottom;
+  padding: 10px 0;
+}
 .consultation {
   @extend %row;
+  @extend %col-xs-12-wrap;
+  justify-content: center;
+  // max-width: map-get($grid-breakpoints, sm);
   flex-wrap: wrap;
-  margin: 10px;
-  border: 2px solid black;
-  padding: 12px;
+  // margin: 0 auto;
+  // padding: 12px;
+  // background-color: lighten($purple, 55%);
+  // box-shadow: 0 3px 17px -4px #000;
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    order: 1;
+  }
+  // @media (min-width: map-get($grid-breakpoints, lg)) {
+    // max-width: map-get($grid-breakpoints, lg);
+  // }
+  // @media (min-width: map-get($grid-breakpoints, xl)) {
+    // max-width: map-get($grid-breakpoints, xl);
+  // }
   // background-size: cover;
 }
 .consultation__text {
-  @extend %col-xs-12;
-  @extend %col-lg-6;
-  background-color: white;
+  @extend %col-xs-12-wrap;
+  @extend %col-md-6;
   padding: 0 8px;
+  p {
+    line-height: 2.2;
+    color: white;
+    max-width: 700px;
+  }
   @media (min-width: map-get($grid-breakpoints, lg)) {
   }
 }
 .consultation__title {
-  margin: 0;
+  // margin: 0;
+  // padding-bottom: 4px; 
 }
 .consultation__form {
-  @extend %col-xs-12;
-  @extend %col-lg-6;
+  @extend %col-xs-12-wrap;
+  @extend %col-md-6;
+  // @extend %col-xl-6;
   @media (min-width: map-get($grid-breakpoints, lg)) {
+    // min-width: 300px;
+  }
+  .g-recaptcha {
+    // transform: scale(0.75);
+    // transform-origin: 0 0;
+  }
+  .nf-error-msg {
+    font-size: 0.8em;
+    color: white;
+    margin-top: 1px;
+  }
+  nf-fields-wrap {
+    @extend %row;
+    flex-wrap: wrap;
+    nf-field {
+      @extend %col-xs-12-wrap;
+      @extend %col-sm-6-wrap;
+      padding: 0 4px;
+      @media (min-width: map-get($grid-breakpoints, lg)) {
+        // max-width: 250px;
+      }
+      &:nth-child(5) {
+        @extend %col-sm-12-wrap;
+      }
+      .nf-fail{
+        input {
+          border: 1px solid red;
+        }
+      }
+    }
   }
   .nf-form-title {
     display: none;
+  }
+  .nf-field-element {
+    // text-align: right;
   }
   .nf-form-content {
     padding: 0;
     input:not([type='button']),
     textarea {
+      // border: 1px solid #d3d3d3; 
+      width: 100%;
+      color: white;
+      font-family: 'Cabin', sans-serif;
+      background-color: #f9f9f9; 
+      border: 1px solid lighten($purple, 40%);
+      padding: 4px;
+      padding-left: 8px;
+      height: 36px;
+      font-size: 0.85em;
+      width: 100%;
+      min-width: 0;
+      box-shadow: 0 2px 4px -4px #000;
+      // background: rgba(255,255,255,0.5);
+      background: none;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: white;
+      }
+      &:after {
+        height: 36px;
+      }
+    }
+    textarea {
+      height: 160px;
+    }
+    .nf-error.field-wrap {
+      .nf-field-element {
+        &:after {
+          height: 100%;
+          line-height: 36px;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+    input[type='button'] {
+      border: none;
+      font-size: 1.2em;
       background: transparent;
+      color: white;
+      border: 1px solid white;
+      padding: 8px;
+      width: 100%;
+      max-width: 160px;
+      height: 100%;
+      &:hover {
+        transition: all 0.3s;
+        background: $gold;
+        color: white;
+        border: 1px solid $gold;
+        // color: $purple;
+        cursor: pointer;
+      }
     }
   }
   .nf-field-label {
@@ -78,7 +179,6 @@ textarea {
     margin-top: 0;
   }
   .nf-field-container {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
-
 }

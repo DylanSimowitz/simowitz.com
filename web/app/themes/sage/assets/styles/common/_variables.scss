@@ -4,6 +4,28 @@ $gold:                  #cca876;
 $brown:                 #524940;
 $purple:                #4d516d;
 
+$twitter: #00aced;
+$facebook: #3b5998;
+$googleplus: #dd4b39;
+$pinterest: #cb2027;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+$vimeo: #1ab7ea;
+$tumblr: #32506d;
+$instagram: #bc2a8d;
+$flickr: #ff0084;
+$dribbble: #ea4c89;
+$quora: #a82400;
+$foursquare: #0072b1;
+$forrst: #5B9A68;
+$vk: #45668e;
+$wordpress: #21759b;
+$stumbleupon: #EB4823;
+$yahoo: #7B0099;
+$blogger: #fb8f3d;
+$soundcloud: #ff3a00;
+$google: #d34836;
+
 /* Coolors Exported Palette - coolors.co/cca876-252323-50514f-b4adea-fdfff7 */
 
 /* HSL */
@@ -33,17 +55,18 @@ $fa-font-path:          '~font-awesome/fonts';
 
 // Hamburger variables
 $hamburger-layer-width: 24px;
-$hamburger-layer-height: 3px;
-$hamburger-layer-spacing: 5px;
-$hamburger-layer-color: $gold;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 4px;
+$hamburger-layer-color: white;
 
 // Menu
 // $mm_backgroundColor: url('../images/dark-leather.png'), $color2; 
-$mm_backgroundColor: black; 
+// $mm_backgroundColor: lighten($purple, 15%); 
+$mm_backgroundColor: $purple;
 // $mm_backgroundColor: url('../images/dark-leather.png'); 
-$mm_borderColor: $gold;
-$mm_emphasizedBackgroundColor: $color3;
-$mm_textColor: $gold;
+$mm_borderColor: white;
+$mm_emphasizedBackgroundColor: $gold;
+$mm_textColor: white;
 $mm_btnSize: 50px;
 $mm_dimmedTextColor: white;
 $mm_navbarColor: white;

@@ -16,6 +16,12 @@ $cases->icon('dashicons-portfolio');
 
 $testimonials = new PostType('testimonial');
 $testimonials->icon('dashicons-testimonial');
+$testimonials->columns()->add([
+    'rating' => __('Rating')
+]);
+$testimonials->columns()->populate('rating', function($column, $post_id) {
+    echo get_post_meta($post_id, 'rating') . '/5';
+});
 
 $awards = new PostType('award');
 $awards->icon('dashicons-awards');

@@ -1,23 +1,25 @@
+import {getElement} from './helpers';
+
 class Sticky {
-  constructor(element, trigger) {
-    this.element = document.querySelector(element);
-    this.trigger = trigger ? document.querySelector(trigger) : undefined;
+  constructor(element, trigger = undefined, start = 0, end = 0, resize = () => {}) {
+    this.resize = resize;
+    this.start = start;
+    this.end = end;
+    this.element = getElement(element);
+    this.trigger = getElement(trigger);
+    this.onScroll = this.onScroll.bind(this);
+    this.isActive = false;
   }
   init() {
+    this.isActive = true;
     this.scrollTop = 0;
     this.trigger.style.position = 'relative';
-    window.addEventListener('scroll', this.onScroll.bind(this));
-    window.addEventListener('load', this.onLoad.bind(this));
+    window.addEventListener('scroll', this.onScroll);
     window.addEventListener('resize', this.onResize.bind(this));
-  }
-  resizeElementWidth() {
-    this.element.style.width = this.trigger.offsetWidth + 'px';
+    window.addEventListener('load', this.onLoad.bind(this));
   }
   onResize() {
-    this.resizeElementWidth();
-  }
-  onLoad() {
-    this.resizeElementWidth();
+    this.resize();
   }
   onScroll() {
     if (window.requestAnimationFrame) {
@@ -25,6 +27,21 @@ class Sticky {
     } else {
       setTimeout(this.makeSticky.bind(this), 250);
     }
+  }
+  onLoad() {
+    this.resize();
+  }
+  remove() {
+    this.isActive = false;
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize.bind(this));
+    this.removeStyles();
+  }
+  removeStyles() {
+    this.element.style.position = '';
+    this.element.style.top = '';
+    this.element.style.bottom = '';
+    this.trigger.style.position = '';
   }
   makeSticky() {
     const trigger = this.trigger.getBoundingClientRect();
@@ -34,23 +51,20 @@ class Sticky {
     } else {
       this.scrollTop = document.body.scrollTop;
     }
-
-    if (trigger.top <= 0 && trigger.bottom - window.innerHeight > 0) {
-      this.element.style.position = 'fixed';
-      this.element.style.top = '0px';
+    if (trigger.top >= 0) {
+      this.element.style.position = 'absolute';
+      this.element.style.top = this.start + 'px';
       this.element.style.bottom = '';
     }
-
-    if (trigger.bottom - window.innerHeight <= 0) {
+    if (trigger.top < 0) {
+      this.element.style.position = 'fixed';
+      this.element.style.top = this.start + 'px';
+      this.element.style.bottom = '';
+    }
+    if (trigger.bottom - (this.start + this.end) - this.element.offsetHeight <= 0) {
       this.element.style.position = 'absolute';
       this.element.style.top = '';
-      this.element.style.bottom = window.innerHeight - this.element.offsetHeight + 'px';
-    }
-
-    if (trigger.top > 0) {
-      this.element.style.position = '';
-      this.element.style.top = '';
-      this.element.style.bottom = '';
+      this.element.style.bottom = this.end + 'px';
     }
   }
 }
