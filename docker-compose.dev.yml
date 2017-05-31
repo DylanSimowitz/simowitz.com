@@ -3,6 +3,9 @@ version: '2'
 services:
   fpm:
     build:
+      args:
+        - UID=1000
+        - GID=1000
       context: ./
       dockerfile: Dockerfile.dev
     image: simowitz.test
