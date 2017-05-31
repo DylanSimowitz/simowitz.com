@@ -644,6 +644,7 @@
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/edit-author-slug.1.5.0.zip",
                 "reference": null,
+
                 "shasum": null
             },
             "require": {

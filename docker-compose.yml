@@ -30,7 +30,7 @@ services:
     restart: always
     volumes:
       - app:/var/www/html
-      - ./docker/config/nginx/site.template:/etc/nginx/conf.d/site.conf
+      - ./site.conf:/etc/nginx/conf.d/site.conf
 
   db:
     env_file:

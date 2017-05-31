@@ -6,6 +6,7 @@ RUN yarn run build:production
 
 FROM composer/composer:alpine as dependencies
 ARG ACF_PRO_KEY
+
 WORKDIR /composer/
 COPY composer.json composer.lock ./
 RUN composer install

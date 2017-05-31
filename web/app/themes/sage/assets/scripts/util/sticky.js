@@ -36,7 +36,6 @@ class Sticky {
   remove() {
     this.isActive = false;
     window.removeEventListener('scroll', this.onScroll);
-    // window.removeEventListener('resize', this.onResize);
     this.removeStyles();
   }
   removeStyles() {
