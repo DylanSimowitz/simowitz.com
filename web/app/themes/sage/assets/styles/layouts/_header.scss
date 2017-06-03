@@ -131,8 +131,9 @@ nav.header {
   height: 100%;
   a {
     text-decoration: none;
-    color: black;
-    font-family: 'Rufina';
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 0.85em;
   }
   // Primary navigation
   > li {
@@ -152,7 +153,7 @@ nav.header {
       font-weight: bold;
       text-shadow: 1px 1px black;
       @media (min-width: map-get($grid-breakpoints, lg)) {
-        font-size: 1.20em;
+        font-size: 1.10em;
       }
     }
     // Top level dropdown symbol
@@ -171,7 +172,7 @@ nav.header {
         opacity: 1;
       }
     }
-  
+
   li.menu-item-has-children {
     position: relative;
   }
@@ -182,8 +183,8 @@ nav.header {
     opacity: 0;
     position: absolute;
     width: auto;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 1px solid darken($purple, 10%);
+    border-right: 1px solid darken($purple, 10%);
     padding: 0;
     transition: visibility 0.3s, opacity 0.3s; 
     // box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.65);
@@ -196,20 +197,23 @@ nav.header {
     li {
       display: inline-block;
       white-space: nowrap;
-      padding: 12px 8px;
-      padding-right: 12px;
-      background-color: lighten($purple, 40%);
-      border-bottom: 1px solid black;
+      background-color: lighten($purple, 0%);
+      border-bottom: 2px solid darken($purple, 10%);
       text-align: left;
       transition: background-color 0.2s;
+      &:last-child {
+        border-bottom: 1px solid darken($purple, 10%);
+      }
       &:hover {
-        background-color: white;
+        background-color: lighten($purple, 10%);
         a {
           transform: translateX(4px);
         }
       }
       a {
         display: block;
+        height: 100%;
+        padding: 12px 8px;
         transition: transform 0.2s;
       }
     }

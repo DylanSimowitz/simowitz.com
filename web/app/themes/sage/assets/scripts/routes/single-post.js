@@ -9,7 +9,7 @@ export default {
     const $sidebar = document.querySelector('.sidebar--posts');
     const $socialButtons = document.querySelector('.social-buttons');
     const $main = document.querySelector('section.main');
-    // const $article = document.querySelector('article');
+    const $article = document.querySelector('article');
 
     new Parallax('#featured-image').init();
     const stickySocialButtons = new Sticky($socialButtons, $main, 150, 50, debounce(removeSocialButtons, 250));
@@ -25,22 +25,26 @@ export default {
 
 
     function removeSocialButtons() {
-      if (window.innerWidth >= 992 && stickySocialButtons.isActive) {
+      const width = 1200;
+      if (window.innerWidth >= width && stickySocialButtons.isActive) {
         // recalculateWidth($posts, $sidebar);
-      } else if (window.innerWidth >= 992 && !stickySocialButtons.isActive) {
+      } else if (window.innerWidth >= width && !stickySocialButtons.isActive) {
         stickySocialButtons.init();
-      } else if (window.innerWidth < 992 && stickySocialButtons.isActive) {
+        $main.appendChild($socialButtons);
+      } else if (window.innerWidth < width && stickySocialButtons.isActive) {
         stickySocialButtons.remove();
+        $article.appendChild($socialButtons);
       }
     }
 
     function removeSidebar() {
-      if (window.innerWidth >= 992 && stickySidebar.isActive) {
+      const width = 992;
+      if (window.innerWidth >= width && stickySidebar.isActive) {
         recalculateWidth($posts, $sidebar);
-      } else if (window.innerWidth >= 992 && !stickySidebar.isActive) {
+      } else if (window.innerWidth >= width && !stickySidebar.isActive) {
         stickySidebar.init();
         recalculateWidth($posts, $sidebar);
-      } else if (window.innerWidth < 992 && stickySidebar.isActive) {
+      } else if (window.innerWidth < width && stickySidebar.isActive) {
         stickySidebar.remove();
         $posts.style.width = '';
       }

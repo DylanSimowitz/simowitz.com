@@ -4,7 +4,7 @@
 }
 .testimonials {
   @extend %row;
-  @include gutter(8px, xs, md, 8px);
+  @include gutter(12px, xs, xl, 24px);
   flex-wrap: wrap;
   max-width: map-get($grid-breakpoints, xxl);
   margin: 0 auto;
@@ -43,7 +43,7 @@
 .testimonial__card {
   @extend %row;
   @extend %col-xs-12-wrap;
-  @extend %col-md-4;
+  @extend %col-xl-4;
   flex-direction: column;
   @media (min-width: map-get($grid-breakpoints, lg)) {
     flex-direction: row;
